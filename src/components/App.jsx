@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Redirect from="/Rick-And-Morty-API" to="/" />
+          <Redirect from="/Rick-and-Morty" to="/" />
 
           <Route exact path="/" name="App" component={HomePage} />
           <Route exact path="/characters" component={CharactersPage} />
