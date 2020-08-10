@@ -1,7 +1,7 @@
 {
   "name": "rick-and-morty",
   "version": "0.1.0",
-  "homepage": "https://1kxk.github.io/Rick-And-Morty",
+  "homepage": "https://1kxk.github.io/Rick-and-Morty",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
