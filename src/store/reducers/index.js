@@ -3,17 +3,17 @@ import { combineReducers } from 'redux';
 import errorReducer from './errorReducer';
 import imagesReducer from './imagesReducer';
 import loadingReducer from './loadingReducer';
-import nextPageReducer from './nextPageReducer';
-import prevPageReducer from './prevPageReducer';
+import pageReducer from './pageReducer';
 import searchReducer from './searchReducer';
+import lengthReducer from './lengthReducer';
 
 const rootReducer = combineReducers({
   error: errorReducer,
   images: imagesReducer,
   isLoading: loadingReducer,
-  nextPage: nextPageReducer,
-  prevPage: prevPageReducer,
+  page: pageReducer,
   searchName: searchReducer,
+  pages: lengthReducer,
 });
 
 export default rootReducer;

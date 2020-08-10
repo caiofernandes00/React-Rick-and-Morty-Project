@@ -3,15 +3,21 @@ import { select, takeEvery, call, put } from 'redux-saga/effects';
 import { CHARACTERS } from '../types';
 import { fetchAllCharacters, fetchSingleCharacter } from '../../apis/fetchData';
 
-import { setCharacters, setCharactersError } from '../actions';
+import { setCharacters, setCharactersError, setLength } from '../actions';
 
-const getPage = (state) => state.nextPage;
+const getPage = (state) => state.page;
 const getSearch = (state) => state.searchName;
 
 function* handleCharactersLoad() {
   try {
     const page = yield select(getPage);
+
+    // Make call to API handle the request
     const images = yield call(fetchAllCharacters, page);
+
+    // Set length before get the images
+    yield put(setLength(images.info.pages));
+    // Extract only the images
     yield put(setCharacters(images.results));
   } catch (err) {
     yield put(setCharactersError(err.toString()));
@@ -21,7 +27,14 @@ function* handleCharactersLoad() {
 function* handleSearchCharacters() {
   try {
     const name = yield select(getSearch);
-    const images = yield call(fetchSingleCharacter, name);
+    const page = yield select(getPage);
+
+    // Make call to API handle the request
+    const images = yield call(fetchSingleCharacter, name, page);
+
+    // Set length before get the images
+    yield put(setLength(images.info.pages));
+    // Extract only the images
     yield put(setCharacters(images.results));
   } catch (err) {
     yield put(setCharactersError(err.toString()));

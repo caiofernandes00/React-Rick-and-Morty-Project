@@ -5,12 +5,13 @@ const fetchAllCharacters = async (page) => {
   const data = await response.json();
 
   if (response.status >= 400) throw new Error(data.errors);
+
   return data;
 };
 
-const fetchSingleCharacter = async (name) => {
+const fetchSingleCharacter = async (name, page) => {
   const response = await fetch(
-    `https://rickandmortyapi.com/api/character/?name=${name}`,
+    `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`,
   );
   const data = await response.json();
 
@@ -18,17 +19,4 @@ const fetchSingleCharacter = async (name) => {
   return data;
 };
 
-const fetchAllEpisodes = async (page) => {};
-const fetchSingleEpisode = async () => {};
-
-const fetchAllLocations = async (page) => {};
-const fetchSingleLocation = async () => {};
-
-export {
-  fetchAllCharacters,
-  fetchSingleCharacter,
-  fetchAllEpisodes,
-  fetchSingleEpisode,
-  fetchAllLocations,
-  fetchSingleLocation,
-};
+export { fetchAllCharacters, fetchSingleCharacter };

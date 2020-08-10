@@ -4,6 +4,16 @@ const loadCharacters = () => ({
   type: CHARACTERS.LOAD_DEFAULT,
 });
 
+const setPage = (page) => ({
+  type: CHARACTERS.PAGE,
+  page,
+});
+
+const setLength = (length) => ({
+  type: CHARACTERS.LENGTH,
+  length,
+});
+
 const setCharacters = (images) => ({
   type: CHARACTERS.LOAD_SUCCESS,
   images,
@@ -19,4 +29,11 @@ const searchCharacter = (name) => ({
   name,
 });
 
-export { loadCharacters, searchCharacter, setCharactersError, setCharacters };
+export {
+  loadCharacters,
+  searchCharacter,
+  setCharactersError,
+  setCharacters,
+  setPage,
+  setLength,
+};

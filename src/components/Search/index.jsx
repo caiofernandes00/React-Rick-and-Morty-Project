@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { SearchBar } from '../styles/styledComponents';
+import { setPage } from '../../store/actions';
+
 import './styles.scss';
 
 const Search = ({ textLabel, action }) => {
   const dispatch = useDispatch();
   const [term, setTerm] = useState('');
 
-  function onFormSubmit(e) {
+  async function onFormSubmit(e) {
     e.preventDefault();
 
-    dispatch(action(term));
+    await dispatch(setPage(1));
+    await dispatch(action(term));
   }
 
   function onInputChange(e) {
@@ -23,7 +25,7 @@ const Search = ({ textLabel, action }) => {
       <form onSubmit={onFormSubmit}>
         <div className="field">
           <label>{textLabel}</label>
-          <SearchBar value={term} onChange={onInputChange} type="search" />
+          <input value={term} onChange={onInputChange} type="search" />
         </div>
       </form>
     </div>
