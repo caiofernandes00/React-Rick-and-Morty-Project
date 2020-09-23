@@ -1,10 +1,13 @@
-#### React application build with:
+### React application build for learning purposes. Some features below:
 
 - Redux-saga to handle async requests;
 - React-route to handle navigation;
-- Some styled components together with sass
+- SASS for styling
 
-###### Any issues I'll be fixing and eventually adding more features. This application is for learning purposes so I'll gladly accept to receive any suggestion.
+
+### Preview
+  <img src="./assets/preview.png" />
+
 
 ###### Link for the [API](http://rickandmortyapi.com/) I'm using
 
