@@ -10,5 +10,3 @@
 
 
 ###### Link for the [API](http://rickandmortyapi.com/) I'm using
-
-#### Still in Progress!
