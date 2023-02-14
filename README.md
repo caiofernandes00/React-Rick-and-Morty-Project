@@ -9,4 +9,7 @@
   <img src="./assets/preview.png" />
 
 
+### Archived
+This one of my first react project, there is nothing to learn here anymore, so I'm archiving it
+
 ###### Link for the [API](http://rickandmortyapi.com/) I'm using
